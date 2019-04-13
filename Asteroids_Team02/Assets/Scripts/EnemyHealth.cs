@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 3;
     public int currentHealth;
 
+    AudioSource enemyAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Awake()
     {
+        enemyAudio = GetComponent<AudioSource>();
         // Set current health when enemy spawns
         currentHealth = startingHealth;
     }
@@ -27,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage()
     {
+        enemyAudio.Play();
         currentHealth--;
         if (currentHealth <= 0)
         {
@@ -36,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        
+        Destroy(gameObject, 0.05f);
     }
 }
