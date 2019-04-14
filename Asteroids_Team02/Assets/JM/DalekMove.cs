@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DalekMove : MonoBehaviour
 {
     private Transform[] waypoints;
     private int currentWaypoint = 0;
     private float rotationSpeed = 4f;
+    private NavMeshAgent agent;
 
     public GameObject waypointContainer;
     public float speed = 500f;
@@ -15,6 +17,7 @@ public class DalekMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         // Copy waypoint info from public variable.  The container itself is among the transforms
         // in the container.
         Transform[] potentialWaypoints = waypointContainer.GetComponentsInChildren<Transform>();
@@ -44,10 +47,11 @@ public class DalekMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movementVector = NavigateTowardWaypoint();
+        //agent.SetDestination(waypoints[currentWaypoint].transform.position);
+        //Vector3 movementVector = NavigateTowardWaypoint();
 
         // Set velocity to direction * speed * deltaTime.
-        GetComponent<Rigidbody>().velocity = movementVector.normalized * speed * Time.fixedDeltaTime;
+        //GetComponent<Rigidbody>().velocity = movementVector.normalized * speed * Time.fixedDeltaTime;
     }
 
     Vector3 NavigateTowardWaypoint()
