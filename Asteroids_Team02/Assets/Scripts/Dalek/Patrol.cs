@@ -24,7 +24,7 @@ public class Patrol : NPCBaseFSM
         if (waypoints.Length == 0) return;
 
         if (Vector3.Distance(waypoints[currentWP].transform.position,
-                    NPC.transform.position) < 3.0f)
+                    NPC.transform.position) < accuracy)
         {
             currentWP++;
             if (currentWP >= waypoints.Length)
@@ -38,8 +38,8 @@ public class Patrol : NPCBaseFSM
         var direction = waypoints[currentWP].transform.position - NPC.transform.position;
         NPC.transform.rotation = Quaternion.Slerp(NPC.transform.rotation,
                             Quaternion.LookRotation(direction),
-                            1.0f * Time.deltaTime);
-        NPC.transform.Translate(0, 0, Time.deltaTime * 2.0f);
+                            rotSpeed * Time.deltaTime);
+        NPC.transform.Translate(0, 0, Time.deltaTime * speed);
 
     }
 

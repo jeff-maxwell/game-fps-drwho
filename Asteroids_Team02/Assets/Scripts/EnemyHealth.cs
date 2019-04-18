@@ -6,13 +6,15 @@ public class EnemyHealth : MonoBehaviour
 {
     public int startingHealth = 3;
     public int currentHealth;
+    public ParticleSystem explodeAnimation;
 
     AudioSource enemyAudio;
+    bool hasPlayedExplosion = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        explodeAnimation.Stop();
     }
 
     private void Awake()
@@ -25,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage()
@@ -35,12 +37,23 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            if (hasPlayedExplosion)
+            {
+                Destroy(gameObject, 0.05f);
+            }
         }
     }
 
     private void Die()
     {
-        
-        Destroy(gameObject, 0.05f);
+        print(explodeAnimation.isPlaying);
+
+        if (!explodeAnimation.isPlaying)
+        {
+            explodeAnimation.Play();
+            explodeAnimation.Emit(1);
+            hasPlayedExplosion = true;
+        }
+
     }
 }
