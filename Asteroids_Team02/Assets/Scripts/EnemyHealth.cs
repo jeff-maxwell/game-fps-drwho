@@ -9,7 +9,6 @@ public class EnemyHealth : MonoBehaviour
     public ParticleSystem explodeAnimation;
 
     AudioSource enemyAudio;
-    bool hasPlayedExplosion = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +36,6 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            if (hasPlayedExplosion)
-            {
-                Destroy(gameObject, 0.05f);
-            }
         }
     }
 
@@ -51,8 +46,7 @@ public class EnemyHealth : MonoBehaviour
         if (!explodeAnimation.isPlaying)
         {
             explodeAnimation.Play();
-            explodeAnimation.Emit(1);
-            hasPlayedExplosion = true;
+            Destroy(gameObject, 0.8f);
         }
 
     }
