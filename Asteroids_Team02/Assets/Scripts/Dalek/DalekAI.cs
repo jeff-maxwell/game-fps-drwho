@@ -8,6 +8,9 @@ public class DalekAI : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     public GameObject turret;
+    public float fireTime = 0.5f;
+    public float repeatRate = 0.5f;
+    private AudioSource audioSource;
 
     public GameObject GetPlayer()
     {
@@ -30,12 +33,17 @@ public class DalekAI : MonoBehaviour
 
     public void StartFiring()
     {
-        InvokeRepeating("Fire", 0.5f, 0.5f);
+        InvokeRepeating("Fire", fireTime, repeatRate);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()

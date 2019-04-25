@@ -91,7 +91,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c3c52d320529ba4693e9605e58f6810, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62d888b1b06194940bf9d9445a0cabbe, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
       propertyPath: m_LocalRotation.y
       value: 1
@@ -337,10 +341,6 @@ PrefabInstance:
     - target: {fileID: 400070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.609
-      objectReference: {fileID: 0}
-    - target: {fileID: 100070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
-      propertyPath: m_Name
-      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
