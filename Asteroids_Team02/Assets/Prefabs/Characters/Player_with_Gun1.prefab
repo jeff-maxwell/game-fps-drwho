@@ -512,6 +512,11 @@ PrefabInstance:
     - target: {fileID: 9079397435122003736, guid: e75bd10c8df517049885d248ddcc4098,
         type: 3}
       propertyPath: m_Name
+      value: Player_with_Gun1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079397435122003736, guid: e75bd10c8df517049885d248ddcc4098,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9079397435122003740, guid: e75bd10c8df517049885d248ddcc4098,

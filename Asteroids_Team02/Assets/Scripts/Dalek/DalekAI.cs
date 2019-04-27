@@ -5,12 +5,12 @@ using UnityEngine;
 public class DalekAI : MonoBehaviour
 {
     Animator anim;
-    public GameObject player;
     public GameObject bullet;
     public GameObject turret;
     public float fireTime = 0.5f;
     public float repeatRate = 0.5f;
     private AudioSource audioSource;
+    private GameObject player;
 
     public GameObject GetPlayer()
     {
@@ -44,12 +44,11 @@ public class DalekAI : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        anim.SetFloat("distance",
-            Vector3.Distance(transform.position,
-                             player.transform.position));    
+        anim.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));    
     }
 }
