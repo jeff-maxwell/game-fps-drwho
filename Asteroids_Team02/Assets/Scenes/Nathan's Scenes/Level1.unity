@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23236784, g: 0.23553982, b: 0.27230316, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -141,7 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: defc220a42990014a88b2970d802ccfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dalek: {fileID: 6015100305558049758, guid: 63b40c63b3f724a52825aad9aeda6a01, type: 3}
+  dalek1: {fileID: 6015100305558049758, guid: 63b40c63b3f724a52825aad9aeda6a01, type: 3}
+  dalek2: {fileID: 711559048117693359, guid: f81e691b210e8794fa32ca12ac173504, type: 3}
+  dalek3: {fileID: 2563011708332204446, guid: 7b451200b06e8764785084618c8add8a, type: 3}
+  dalek4: {fileID: 8111423089691928295, guid: cdd8aa8864b9a6e469e284d91b675bc6, type: 3}
+  dalek5: {fileID: 8159605246479717317, guid: 25f7c379028cf9b428c69900eb918b08, type: 3}
 --- !u!4 &178715127
 Transform:
   m_ObjectHideFlags: 0
@@ -532,6 +536,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4540613350824408759, guid: f3329c011caf5443eabffd70a4f02ee9,
+        type: 3}
+      propertyPath: nextLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3329c011caf5443eabffd70a4f02ee9, type: 3}
 --- !u!1 &719441474
@@ -671,7 +680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &892826631
 Transform:
   m_ObjectHideFlags: 0
@@ -1261,6 +1270,53 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1441987046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 854905284}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441987047}
+  m_Layer: 0
+  m_Name: Menu (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1441987047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 854905284}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441987046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1896607980}
+  m_Father: {fileID: 1856859342}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1457978887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 854905284}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896607980}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1460935905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2215,7 +2271,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1896607980}
+  - {fileID: 1441987047}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2347,12 +2403,21 @@ Transform:
   m_Father: {fileID: 4782556734929293}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1896607980 stripped
+--- !u!4 &1896607980
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 7655880810033643897, guid: 37d2a453cc7b04948ad1110f278fd77c,
     type: 3}
   m_PrefabInstance: {fileID: 854905284}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457978887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1441987047}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045703669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 420289672595514771, guid: 1a8db2ed296f14db6809df1ba85ae62f,
