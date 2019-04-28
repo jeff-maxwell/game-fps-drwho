@@ -37,7 +37,11 @@ public class Gun : MonoBehaviour
             timeToFire = Time.time + 1 / effectToSpawn.GetComponent<ProjectileMove>().fireRate;
             Shoot();
         }
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, gunBeforeRecoil, recoil * Time.deltaTime);
+        else
+        {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, gunBeforeRecoil, recoil * Time.deltaTime);
+        }
+        
         
     }
 
