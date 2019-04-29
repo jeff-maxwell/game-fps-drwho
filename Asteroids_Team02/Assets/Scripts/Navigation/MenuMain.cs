@@ -25,6 +25,7 @@ public class MenuMain : MonoBehaviour
         GameInfo.currentHealth = 100;
         GameInfo.GameIsPaused = false;
         GameInfo.LevelIteration = 1;
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
