@@ -77,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
-        Debug.Log("Dead");
+        //Debug.Log("Dead");
         // Set the death flag so this function won't be called again.
         GameInfo.IsDead = true;
 
@@ -98,7 +98,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Collsion");
-        TakeDamage(1);
+        TakeDamage(2);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
+    public float damage = 1f;
     public float range = 1000f;
     public float backfire = 10f;
     public float recoil = 5f;
@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
                 target.TakeDamage(damage);
             }
         }

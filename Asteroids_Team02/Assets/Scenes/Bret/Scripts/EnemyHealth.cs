@@ -19,16 +19,12 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         enemyAudio = GetComponent<AudioSource>();
+
         // Set current health when enemy spawns
         currentHealth = startingHealth;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void TakeDamage()
     {
         enemyAudio.Play();
