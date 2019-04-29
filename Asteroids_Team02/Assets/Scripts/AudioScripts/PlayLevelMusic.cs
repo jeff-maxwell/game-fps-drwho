@@ -5,12 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class PlayLevelMusic : MonoBehaviour
 {
-
+    public bool CallCamShake = true;
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<AudioSource>().playOnAwake = false;
-        this.GetComponent<AudioSource>().loop = true;
+        this.GetComponent<AudioSource>().loop = false;
 
     }
 
@@ -22,6 +22,18 @@ public class PlayLevelMusic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        this.GetComponent<AudioSource>().Play();
+        if (other.tag == "Player")
+        {
+            if (!this.GetComponent<AudioSource>().isPlaying)
+            {
+                this.GetComponent<AudioSource>().Play();
+                if (CallCamShake)
+                {
+
+                    StartCoroutine(other.GetComponentInChildren<CameraShake>().Shake(.4f, .3f));
+                }
+            }
+        }
+        
     }
 }
