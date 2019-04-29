@@ -23,9 +23,11 @@ public class Gun : MonoBehaviour
     private Vector3 direction;
     private Vector3 gunBeforeRecoil;
     private Quaternion rotation;
+    private AudioSource ac;
 
     private void Start()
     {
+        ac = GetComponent<AudioSource>();
         effectToSpawn = vfx[0];
         gunBeforeRecoil = transform.localPosition;
     }
@@ -49,7 +51,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-
+        ac.Play();
         //Recoil
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, recoilPoint.transform.localPosition, backfire * Time.deltaTime);
 
@@ -71,8 +73,7 @@ public class Gun : MonoBehaviour
             SpawnVFX();
         }
 
-        AudioSource ac = this.GetComponent<AudioSource>();
-        if (!ac.isPlaying) { ac.Play(); }
+        
 
     }
 
