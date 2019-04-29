@@ -15,8 +15,12 @@ public class EnemySpawnController : MonoBehaviour
     public GameObject enemy3;
     public GameObject enemy4;
     public GameObject enemy5;
-    
+
     //waypoints here
+    private void Awake()
+    {
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+    }
 
     private GameObject getEnemyChoice()
     {
@@ -45,7 +49,7 @@ public class EnemySpawnController : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             
-            currentWP = Random.Range(0, waypoints.Length - 1);
+            currentWP = Random.Range(0, waypoints.Length); //no need for -1 because Rand is noninclusive on final val.
             //instantiate all at once      
 
             Instantiate(getEnemyChoice(), waypoints[currentWP].transform.position, waypoints[currentWP].transform.rotation);

@@ -9,6 +9,6 @@ public static class GameInfo
     public static bool GameIsPaused;
     public static bool IsDead;
 
-    public static int LevelIteration;
+    public static int LevelIteration = 1;
 
 }
