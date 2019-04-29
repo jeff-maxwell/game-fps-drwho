@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nathan's Scenes/Level2.unity
     guid: 403e7339f5a2c3a4db19f4dafc3b4ba5
+  - enabled: 1
+    path: Assets/Scenes/Nathan's Scenes/Level3.unity
+    guid: 2fbf92ca17812f5458bd0d3ac8309dd0
   m_configObjects: {}
