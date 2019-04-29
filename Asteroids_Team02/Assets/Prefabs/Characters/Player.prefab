@@ -904,6 +904,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4972368396912256118, guid: 4f1c64b1367850e4a8281e7e9586f7b9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972368396912256118, guid: 4f1c64b1367850e4a8281e7e9586f7b9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4972368395633508218, guid: 4f1c64b1367850e4a8281e7e9586f7b9,
         type: 3}
       propertyPath: m_LocalPosition.x

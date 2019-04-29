@@ -37,8 +37,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        print(explodeAnimation.isPlaying);
-
         if (!explodeAnimation.isPlaying)
         {
             explodeAnimation.Play();
