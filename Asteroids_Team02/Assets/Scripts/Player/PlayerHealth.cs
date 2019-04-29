@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    public ParticleSystem part;
+    public List<ParticleCollisionEvent> collisionEvents;
+
     public int startingHealth = 100;                            // The amount of health the player starts the game with.
     public Slider healthSlider;                                 // Reference to the UI's health bar.
-    public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
-    public AudioClip deathClip;                                 // The audio clip to play when the player dies.
+   //public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
+   //public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
-    AudioSource playerAudio;                                    // Reference to the AudioSource component.
+    //AudioSource playerAudio;                                    // Reference to the AudioSource component.
     PlayerMovement playerMovement;                              // Reference to the player's movement.
     
     bool damaged;                                               // True when the player gets damaged.
@@ -20,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         // Setting up the references.
-        playerAudio = GetComponent<AudioSource>();
+        //playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
 
         // Set the initial health of the player.
@@ -34,13 +38,13 @@ public class PlayerHealth : MonoBehaviour
         if (damaged)
         {
             // ... set the colour of the damageImage to the flash colour.
-            damageImage.color = flashColour;
+            //damageImage.color = flashColour;
         }
         // Otherwise...
         else
         {
             // ... transition the colour back to clear.
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            //damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
         // Reset the damaged flag.
@@ -60,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = GameInfo.currentHealth;
 
         // Play the hurt sound effect.
-        playerAudio.Play();
+        //playerAudio.Play();
 
         // If the player has lost all it's health and the death flag hasn't been set yet...
         if (GameInfo.currentHealth <= 0 && !GameInfo.IsDead)
@@ -73,6 +77,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
+        Debug.Log("Dead");
         // Set the death flag so this function won't be called again.
         GameInfo.IsDead = true;
 
@@ -83,11 +88,17 @@ public class PlayerHealth : MonoBehaviour
         //anim.SetTrigger("Die");
 
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
-        playerAudio.clip = deathClip;
-        playerAudio.Play();
+        //playerAudio.clip = deathClip;
+        //playerAudio.Play();
 
         // Turn off the movement and shooting scripts.
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Collsion");
+        TakeDamage(1);
     }
 }

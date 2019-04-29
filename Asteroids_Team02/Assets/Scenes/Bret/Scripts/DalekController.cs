@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class DalekController : MonoBehaviour
 {
     [SerializeField]
-    Transform player;
+    //Transform player;
     NavMeshAgent dalek;
 
     void Start()
@@ -15,14 +15,9 @@ public class DalekController : MonoBehaviour
         
     }
 
-    private void Update()
+    public void SetDestination(Vector3 target)
     {
-        SetDestination();
-    }
-
-    void SetDestination()
-    {
-        Vector3 target = player.transform.position;
+        
         dalek.SetDestination(target);
     }
 }
