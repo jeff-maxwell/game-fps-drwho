@@ -1,22 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 using UnityEngine.SceneManagement;
 
-
-public class MenuMain : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
-        
+      this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (GameInfo.IsDead)
+        {
+            
+            
+        }
     }
-
 
     public void PlayGame()
     {
@@ -33,5 +37,4 @@ public class MenuMain : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-
 }

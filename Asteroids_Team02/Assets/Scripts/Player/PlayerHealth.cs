@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
@@ -17,7 +17,9 @@ public class PlayerHealth : MonoBehaviour
 
     //AudioSource playerAudio;                                    // Reference to the AudioSource component.
     PlayerMovement playerMovement;                              // Reference to the player's movement.
-    
+    MouseLook mouseLookX;
+    MouseLook mouseLookY;
+
     bool damaged;                                               // True when the player gets damaged.
 
 
@@ -26,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
         // Setting up the references.
         //playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
+        mouseLookX = GetComponent<MouseLook>();
+        mouseLookX = this.GetComponentInChildren<MouseLook>();
 
         // Set the initial health of the player.
         GameInfo.currentHealth = startingHealth;
@@ -93,6 +97,15 @@ public class PlayerHealth : MonoBehaviour
 
         // Turn off the movement and shooting scripts.
         playerMovement.enabled = false;
+        mouseLookX.enabled = false;
+        mouseLookX.enabled = false;
+        Time.timeScale = 0f;
+        GameInfo.IsDead = false;
+        GameInfo.currentScore = 0;
+        GameInfo.currentHealth = 100;
+        GameInfo.GameIsPaused = false;
+        GameInfo.LevelIteration = 1;
+        SceneManager.LoadScene(0);
         //playerShooting.enabled = false;
     }
 
