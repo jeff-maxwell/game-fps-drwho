@@ -47,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
         {
             explodeAnimation.Play();
             Destroy(gameObject, 0.8f);
+            GameInfo.currentScore += 1;
         }
 
     }
