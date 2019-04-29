@@ -26,6 +26,8 @@ public class MenuMain : MonoBehaviour
         GameInfo.GameIsPaused = false;
         GameInfo.LevelIteration = 1;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene(1);
     }
 
