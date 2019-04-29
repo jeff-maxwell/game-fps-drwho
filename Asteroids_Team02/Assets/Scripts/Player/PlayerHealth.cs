@@ -105,6 +105,8 @@ public class PlayerHealth : MonoBehaviour
         GameInfo.currentHealth = 100;
         GameInfo.GameIsPaused = false;
         GameInfo.LevelIteration = 1;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
         //playerShooting.enabled = false;
     }
