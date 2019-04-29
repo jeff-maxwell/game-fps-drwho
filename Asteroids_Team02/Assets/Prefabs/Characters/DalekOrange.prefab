@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30727a047843ac248a8de41155e00385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 20
+  startingHealth: 7
   currentHealth: 0
   explodeAnimation: {fileID: 2075394309333574978}
 --- !u!114 &6025204968614875358
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 20
-  viewAngle: 180
+  viewAngle: 360
   rotateToPlayerSpeed: 8
   playerFound: 0
   firing: 0
@@ -260,10 +260,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7404814792795310618, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3410513693993640268, guid: 63b40c63b3f724a52825aad9aeda6a01,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550738330547420157, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550738330547420157, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8599715259382550177, guid: 63b40c63b3f724a52825aad9aeda6a01,
         type: 3}

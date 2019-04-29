@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 20
-  viewAngle: 180
+  viewAngle: 360
   rotateToPlayerSpeed: 8
   playerFound: 0
   firing: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30727a047843ac248a8de41155e00385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 15
+  startingHealth: 8
   currentHealth: 0
   explodeAnimation: {fileID: 4870932069955175617}
 --- !u!1001 &6412608990926468858
@@ -255,12 +255,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7404814792795310618, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3410513693993640268, guid: 63b40c63b3f724a52825aad9aeda6a01,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 77b2008fc6197f44a82570617d274355,
         type: 2}
+    - target: {fileID: 4550738330547420157, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550738330547420157, guid: 63b40c63b3f724a52825aad9aeda6a01,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8599715259382550177, guid: 63b40c63b3f724a52825aad9aeda6a01,
         type: 3}
       propertyPath: m_AngularSpeed

@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time >= timeToFire)
+        if (Input.GetMouseButton(0) || Input.GetButtonDown("Fire1") && Time.time >= timeToFire)
         {
             timeToFire = Time.time + 1 / effectToSpawn.GetComponent<ProjectileMove>().fireRate;
             Shoot();

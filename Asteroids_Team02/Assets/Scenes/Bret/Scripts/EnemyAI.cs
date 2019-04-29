@@ -25,9 +25,11 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator start;
     private IEnumerator fire;
 
+    private AudioSource exterminate;
+
     void Start()
     {
-        //dalek = dalekNavAgent.GetNavMeshAgent();
+        exterminate = GetComponent<AudioSource>();
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         dalekNavAgent = GetComponent<DalekController>();
         start = FindTargetsWithDelay(.5f);
@@ -85,15 +87,12 @@ public class EnemyAI : MonoBehaviour
 
                     if (firing == false)
                     {
+                        exterminate.Play();
                         GameObject charge = Instantiate(protonCharge, firePoint.transform.position, Quaternion.LookRotation(-transform.forward, Vector3.up), transform); //Load Proton Weapon
                         firing = true; //So we dont fire nonstop
                         StartCoroutine("FireSequence"); //Starts firing coroutine (This basically is just a cooldown for the weapon
                         Destroy(charge, 5f); //Cleans up fire particles
                     }
-
-                    //Debug.Log("I see the target at: " + target.transform.position);
-                    //Initiate fire sequence
-                    //Fire();
                 }
                 else
                 {

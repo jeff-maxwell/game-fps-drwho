@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 20
-  viewAngle: 180
+  viewAngle: 360
   rotateToPlayerSpeed: 8
   playerFound: 0
   firing: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30727a047843ac248a8de41155e00385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 5
   currentHealth: 0
   explodeAnimation: {fileID: 2693893369433105670}
 --- !u!1001 &7251802845046566732
@@ -275,6 +275,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: aa775a50d5bbf664bbfc319eb83cf72d, type: 2}
+    - target: {fileID: 4351943055385555563, guid: f81e691b210e8794fa32ca12ac173504,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499012498504816957, guid: f81e691b210e8794fa32ca12ac173504,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.2011845
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499012498504816957, guid: f81e691b210e8794fa32ca12ac173504,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.100592256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314235651059925900, guid: f81e691b210e8794fa32ca12ac173504,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314235651059925900, guid: f81e691b210e8794fa32ca12ac173504,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3314167206939752144, guid: f81e691b210e8794fa32ca12ac173504,
         type: 3}
       propertyPath: m_Radius
@@ -295,7 +320,8 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4351943055385555563, guid: f81e691b210e8794fa32ca12ac173504, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f81e691b210e8794fa32ca12ac173504, type: 3}
 --- !u!1 &7889289959464486115 stripped
 GameObject:
