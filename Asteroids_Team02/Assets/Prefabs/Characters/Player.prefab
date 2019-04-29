@@ -624,8 +624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d091b7755fd7b8d45a71d5fb07a16b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: -9.8
+  speed: 8
+  gravity: 0
 --- !u!114 &5402897716990298849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,16 +1009,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4972368396912256118, guid: 4f1c64b1367850e4a8281e7e9586f7b9,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972368396912256118, guid: 4f1c64b1367850e4a8281e7e9586f7b9,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1c64b1367850e4a8281e7e9586f7b9, type: 3}
 --- !u!224 &5867983887189996413 stripped
@@ -1110,21 +1100,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.18399008
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
-      propertyPath: m_UpdateMode
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 507ee7913afde744fa3e8a4ddb9dbbf5, type: 2}
     - target: {fileID: 9500000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
