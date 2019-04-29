@@ -88,11 +88,11 @@ public class PlayerHealth : MonoBehaviour
         //anim.SetTrigger("Die");
 
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
-        //playerAudio.clip = deathClip;
-        //playerAudio.Play();
+        ///playerAudio.clip = deathClip;
+        //.Play();
 
         // Turn off the movement and shooting scripts.
-        //playerMovement.enabled = false;
+        playerMovement.enabled = false;
         //playerShooting.enabled = false;
     }
 
