@@ -2,12 +2,29 @@
 
 public class Target : MonoBehaviour
 {
-    public float health = 50f;
+    public float startingHealth = 50f;
+    public float currentHealth;
+    public ParticleSystem explodeAnimation;
+
+    AudioSource enemyAudio;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        explodeAnimation.Stop();
+        currentHealth = startingHealth;
+    }
+
+    private void Awake()
+    {
+        enemyAudio = GetComponent<AudioSource>();
+    }
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if(health <= 0f)
+        enemyAudio.Play();
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -15,6 +32,12 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        //print(explodeAnimation.isPlaying);
+
+        if (!explodeAnimation.isPlaying)
+        {
+            explodeAnimation.Play();
+            Destroy(gameObject, 0.8f);
+        }
     }
 }
