@@ -11,6 +11,7 @@ Objects
 5. FX Simple Lighting Pack - KTK.Kumamoto
 6. Standard Assest - Unity
 7. Dalek - 3D Warehouse - https://3dwarehouse.sketchup.com/model/72532771-1de5-4352-99e3-ebfbf442ec16/Dalek
+8. Dalek Explosion - http://u3d.as/1i2i
 
 Sounds
 
