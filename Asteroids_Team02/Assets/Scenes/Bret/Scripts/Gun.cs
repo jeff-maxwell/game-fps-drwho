@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class Gun : MonoBehaviour
 {
     public float damage = 10f;
@@ -26,7 +28,6 @@ public class Gun : MonoBehaviour
     {
         effectToSpawn = vfx[0];
         gunBeforeRecoil = transform.localPosition;
-
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class Gun : MonoBehaviour
         //Recoil
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, recoilPoint.transform.localPosition, backfire * Time.deltaTime);
 
-
+       
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             RotateToHit(gameObject, hit.point);
@@ -70,6 +71,8 @@ public class Gun : MonoBehaviour
             SpawnVFX();
         }
 
+        AudioSource ac = this.GetComponent<AudioSource>();
+        if (!ac.isPlaying) { ac.Play(); }
 
     }
 
