@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask obstacleMask;
     public GameObject protonCharge;
     public GameObject firePoint;
+    public GameObject[] waypoints;
     public DalekController dalekNavAgent;
 
     private Vector3 targetLocation;
@@ -24,8 +27,10 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        //dalek = dalekNavAgent.GetNavMeshAgent();
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         dalekNavAgent = GetComponent<DalekController>();
-        start = FindTargetsWithDelay(.2f);
+        start = FindTargetsWithDelay(.5f);
         StartCoroutine(start);
         fire = FireSequence();
     }
@@ -36,6 +41,14 @@ public class EnemyAI : MonoBehaviour
         {
             Quaternion rotation = Quaternion.LookRotation(Vector3.Scale(dirToTarget, new Vector3(1f, 0, 1f)));
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotateToPlayerSpeed);
+        }
+        else
+        {
+            if (Vector3.Distance(transform.position, dalekNavAgent.GetDestination()) < 1f)
+            {
+                int num = Random.Range(0, waypoints.Length);
+                dalekNavAgent.SetDestination(waypoints[num].transform.position);
+            }
         }
     }
 
@@ -50,7 +63,6 @@ public class EnemyAI : MonoBehaviour
 
    private IEnumerator FireSequence()
     {
-
         yield return new WaitForSeconds(4f);
         firing = false;
     }
@@ -66,10 +78,9 @@ public class EnemyAI : MonoBehaviour
             if(Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
-                Debug.Log(firing);
                 if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    dalekNavAgent.SetDestination(target.position); //Chase Player
+                    dalekNavAgent.SetTarget(target.position); //Chase Player
                     playerFound = true;
 
                     if (firing == false)
@@ -95,10 +106,5 @@ public class EnemyAI : MonoBehaviour
     public Vector3 DirFromAngle(float angleInDegrees)
     {
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
-
-    void Fire()
-    {
-        
     }
 }

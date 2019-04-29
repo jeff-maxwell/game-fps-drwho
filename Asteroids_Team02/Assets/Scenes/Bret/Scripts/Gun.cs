@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
+    public float damage = 1f;
     public float range = 1000f;
     public float backfire = 10f;
     public float recoil = 5f;
@@ -23,9 +23,11 @@ public class Gun : MonoBehaviour
     private Vector3 direction;
     private Vector3 gunBeforeRecoil;
     private Quaternion rotation;
+    private AudioSource ac;
 
     private void Start()
     {
+        ac = GetComponent<AudioSource>();
         effectToSpawn = vfx[0];
         gunBeforeRecoil = transform.localPosition;
     }
@@ -49,7 +51,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-
+        ac.Play();
         //Recoil
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, recoilPoint.transform.localPosition, backfire * Time.deltaTime);
 
@@ -61,7 +63,7 @@ public class Gun : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
                 target.TakeDamage(damage);
             }
         }
@@ -71,8 +73,7 @@ public class Gun : MonoBehaviour
             SpawnVFX();
         }
 
-        AudioSource ac = this.GetComponent<AudioSource>();
-        if (!ac.isPlaying) { ac.Play(); }
+        
 
     }
 
