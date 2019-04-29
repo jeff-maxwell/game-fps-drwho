@@ -8,6 +8,8 @@ Objects
 2. Moon Model - Turbo Squid
 3. Asteroid Model - Turbo Squid
 4. Walls and Room Objects - Creepy Cat
+5. FX Simple Lighting Pack - KTK.Kumamoto
+6. Standard Assest - Unity
 
 Sounds
 
