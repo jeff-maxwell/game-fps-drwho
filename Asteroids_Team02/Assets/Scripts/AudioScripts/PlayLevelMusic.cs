@@ -29,7 +29,6 @@ public class PlayLevelMusic : MonoBehaviour
                 this.GetComponent<AudioSource>().Play();
                 if (CallCamShake)
                 {
-
                     StartCoroutine(other.GetComponentInChildren<CameraShake>().Shake(.4f, .3f));
                 }
             }
