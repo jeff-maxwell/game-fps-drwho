@@ -32,7 +32,7 @@ public class Target : MonoBehaviour
     void Die()
     {
         //print(explodeAnimation.isPlaying);
-
+        GameInfo.UpdateScore();
         if (!explodeAnimation.isPlaying)
         {
             explodeAnimation.Play();
