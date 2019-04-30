@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Pause"))
         {
             cameraY.enabled = false;
-            _charController.enabled = false;
             playerHud.enabled = false;
             pauseMenu.gameObject.SetActive(true);
             playerMovement.speed = 0;
@@ -52,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetButtonDown("Submit") && pauseMenu.enabled)
         {
             cameraY.enabled = true;
-            _charController.enabled = true;
             playerHud.enabled = true;
             pauseMenu.gameObject.SetActive(false);
             playerMovement.speed = 8;

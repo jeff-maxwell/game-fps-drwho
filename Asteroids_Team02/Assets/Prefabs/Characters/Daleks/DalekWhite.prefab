@@ -112,6 +112,75 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880166041960958901}
   m_Enabled: 1
+--- !u!1 &4019346445526078802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4116210495985134761}
+  - component: {fileID: 4220736043649889812}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4116210495985134761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019346445526078802}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.008, y: 1.434, z: 0.634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6921687521106246469}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &4220736043649889812
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019346445526078802}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &6921687521106246470
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +220,7 @@ Transform:
   - {fileID: 3071840857429006179}
   - {fileID: 1880166041960958902}
   - {fileID: 1880166041042378315}
+  - {fileID: 4116210495985134761}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,6 +448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6921687521106246469}
     m_Modifications:
+    - target: {fileID: 100016, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
+      propertyPath: m_Name
+      value: Dalek
+      objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -422,14 +496,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100016, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
-      propertyPath: m_Name
-      value: Dalek
-      objectReference: {fileID: 0}
-    - target: {fileID: 100070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
       propertyPath: m_LocalRotation.y
       value: 1
@@ -454,6 +520,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.609
       objectReference: {fileID: 0}
+    - target: {fileID: 100070, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f60bf40fbc32486783517399dd72601, type: 3}
 --- !u!4 &1422433549947717347 stripped
@@ -469,6 +539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6921687521106246469}
     m_Modifications:
+    - target: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+      propertyPath: m_Name
+      value: PlasmaExplosionEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011693693590, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -512,10 +586,6 @@ PrefabInstance:
     - target: {fileID: 4000011693693590, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
-      propertyPath: m_Name
-      value: PlasmaExplosionEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
