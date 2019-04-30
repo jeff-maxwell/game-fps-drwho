@@ -43,4 +43,14 @@ public class DalekController : MonoBehaviour
     {
         return dalek;
     }
+
+    public void Pause()
+    {
+        dalek.isStopped = true;
+    }
+
+    public void Resume()
+    {
+        dalek.isStopped = false;
+    }
 }

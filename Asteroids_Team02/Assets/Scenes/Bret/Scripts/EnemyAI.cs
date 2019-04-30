@@ -19,13 +19,17 @@ public class EnemyAI : MonoBehaviour
     public GameObject[] waypoints;
     public DalekController dalekNavAgent;
 
+
+    private bool restarted;
     private Vector3 targetLocation;
     private Vector3 dirToTarget;
+    private GameObject charge;
+    private AudioSource exterminate;
 
     private IEnumerator start;
     private IEnumerator fire;
 
-    private AudioSource exterminate;
+    
 
     void Start()
     {
@@ -39,17 +43,38 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (playerFound) //Rotate its self so that its forward position = players position
+        if (GameInfo.GameIsPaused)
         {
-            Quaternion rotation = Quaternion.LookRotation(Vector3.Scale(dirToTarget, new Vector3(1f, 0, 1f)));
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotateToPlayerSpeed);
+            if (restarted)
+            {
+                //Pause Proton charge
+                if (charge != null) { charge.transform.GetChild(0).GetComponent<ParticleSystem>().Pause(); }
+
+                //Pause NavMeshAgent
+                dalekNavAgent.Pause();
+                restarted = false;
+            }
         }
         else
         {
-            if (Vector3.Distance(transform.position, dalekNavAgent.GetDestination()) < 1f)
+            if (!restarted)
             {
-                int num = Random.Range(0, waypoints.Length);
-                dalekNavAgent.SetDestination(waypoints[num].transform.position);
+                if (charge != null) { charge.transform.GetChild(0).GetComponent<ParticleSystem>().Play(); }
+                dalekNavAgent.Resume();
+                restarted = true;
+            }
+            if (playerFound) //Rotate its self so that its forward position = players position
+            {
+                Quaternion rotation = Quaternion.LookRotation(Vector3.Scale(dirToTarget, new Vector3(1f, 0, 1f)));
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotateToPlayerSpeed);
+            }
+            else
+            {
+                if (Vector3.Distance(transform.position, dalekNavAgent.GetDestination()) < 1f)
+                {
+                    int num = Random.Range(0, waypoints.Length);
+                    dalekNavAgent.SetDestination(waypoints[num].transform.position);
+                }
             }
         }
     }
@@ -59,7 +84,10 @@ public class EnemyAI : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
+            if (!GameInfo.GameIsPaused)
+            {
+                FindVisibleTargets();
+            }
         }
     }
 
@@ -88,7 +116,7 @@ public class EnemyAI : MonoBehaviour
                     if (firing == false)
                     {
                         exterminate.Play();
-                        GameObject charge = Instantiate(protonCharge, firePoint.transform.position, Quaternion.LookRotation(-transform.forward, Vector3.up), transform); //Load Proton Weapon
+                        charge = Instantiate(protonCharge, firePoint.transform.position, Quaternion.LookRotation(-transform.forward, Vector3.up), transform); //Load Proton Weapon
                         firing = true; //So we dont fire nonstop
                         StartCoroutine("FireSequence"); //Starts firing coroutine (This basically is just a cooldown for the weapon
                         Destroy(charge, 5f); //Cleans up fire particles
