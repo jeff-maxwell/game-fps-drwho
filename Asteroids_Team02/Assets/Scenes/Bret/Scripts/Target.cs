@@ -22,7 +22,6 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        enemyAudio.Play();
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
