@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
     public float currentHealth;
     public ParticleSystem explodeAnimation;
 
+    private bool isAlive = true;
     AudioSource enemyAudio;
 
     // Start is called before the first frame update
@@ -22,10 +23,14 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
+        if (isAlive)
         {
-            Die();
+            currentHealth -= amount;
+            if (currentHealth <= 0)
+            {
+                isAlive = false;
+                Die();
+            }
         }
     }
 
