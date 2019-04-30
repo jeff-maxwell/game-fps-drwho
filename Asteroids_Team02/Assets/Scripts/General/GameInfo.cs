@@ -16,4 +16,9 @@ public static class GameInfo
         currentScore++;
     }
 
+    public static void AddLevel()
+    {
+        LevelIteration++;
+    }
+
 }
