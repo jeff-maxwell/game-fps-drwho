@@ -23,7 +23,7 @@ public class Target : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        if (currentHealth <= 0)
+        if (currentHealth == 0)
         {
             Die();
         }
