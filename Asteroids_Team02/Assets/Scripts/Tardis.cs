@@ -11,6 +11,7 @@ public class Tardis : MonoBehaviour
         print(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
+            GameInfo.AddLevel();
             SceneManager.LoadScene(nextLevel);
         }
     }

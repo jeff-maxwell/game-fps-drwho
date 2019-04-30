@@ -2090,7 +2090,7 @@ PrefabInstance:
     - target: {fileID: 327401063813781376, guid: 9f064f966f3ce3844a44a1608f2b623b,
         type: 3}
       propertyPath: multiplicityFactor
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 327401063813781376, guid: 9f064f966f3ce3844a44a1608f2b623b,
         type: 3}
@@ -3953,6 +3953,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483958807509780994, guid: f3329c011caf5443eabffd70a4f02ee9,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3329c011caf5443eabffd70a4f02ee9, type: 3}
