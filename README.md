@@ -1,4 +1,6 @@
-# TeamAssignment2
+# Dr Who Game First Person Shooter
+
+This game was a team project (Team Asteroids) for a Masters course in Computer Science at Oklahoma State University (OSU).  The design of the game was to create a first person shooter survival game against Daleks with 3 levels.  This project is a fork and a continuation of that project from class.
 
 Resources Used
 
